@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { Layout } from "../Shared/Components/Layout";
+import { LetsWorkTogetherSection } from "../Shared/Sections/LetsWorkTogetherSection";
 
 export const Contact = () => {
   return (
     <Layout>
       <StyledContainer>
-        {[...Array(60)].map((_, index) => (
-          <div key={index}>Contact Details</div>
-        ))}
+        <LetsWorkTogetherSection />
       </StyledContainer>
     </Layout>
   );

@@ -9,7 +9,7 @@ export const Layout = ({ children }: any) => {
     <>
       <StyledContainer>
         <LeftCardSection>
-          <FadeIn delay={500}>
+          <FadeIn delay={200}>
             <InfoCard />
           </FadeIn>
         </LeftCardSection>
@@ -49,6 +49,7 @@ const RightContentSection = styled.div`
   width: 60%;
   height: 100%;
   overflow-y: scroll;
+  padding-right: 24px;
 
   // Phone and tablet
   @media only screen and (max-width: 1062px) {
@@ -56,6 +57,7 @@ const RightContentSection = styled.div`
     height: max-content;
     overflow-y: visible;
     order: 1;
+    padding: 0 0;
   }
 `;
 

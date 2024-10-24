@@ -1,17 +1,14 @@
 import styled from "styled-components";
 import { Layout } from "../Shared/Components/Layout";
-import { SoftwareEngineerSection } from "../Shared/Components/SoftwareEngineerSection";
+import { SoftwareEngineerSection } from "../Shared/Sections/SoftwareEngineerSection";
+import { LetsWorkTogetherSection } from "../Shared/Sections/LetsWorkTogetherSection";
 
 export const Home = () => {
   return (
     <Layout>
       <StyledContainer>
         <SoftwareEngineerSection />
-        <SoftwareEngineerSection />
-
-        <SoftwareEngineerSection />
-
-        <SoftwareEngineerSection />
+        <LetsWorkTogetherSection />
       </StyledContainer>
     </Layout>
   );

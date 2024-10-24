@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { styled as muiStyle } from "@mui/material/styles";
 import { TextField } from "@mui/material";
+import { useState } from "react";
 
 const CssTextField = muiStyle(TextField)({
   "& label.Mui-focused": {
@@ -39,6 +40,16 @@ export const Input = ({
   placeholder,
   rows,
 }: InputProps) => {
+  const [isError, setIsError] = useState<boolean>(false);
+
+  const handleBlur = () => {
+    if (value === "") {
+      setIsError(true);
+    } else {
+      setIsError(false);
+    }
+  };
+
   return (
     <StyledInput
       id="outlined-basic"
@@ -47,10 +58,12 @@ export const Input = ({
       required={required}
       value={value}
       onChange={(e) => handleChange?.(e)}
-      error={required ? value === "" : false}
+      error={required ? isError : false}
       size="small"
       multiline={rows && rows > 1 ? true : false}
       rows={rows}
+      type="text"
+      onBlur={() => handleBlur()}
     />
   );
 };

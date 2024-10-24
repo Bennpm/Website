@@ -16,13 +16,13 @@ export const Navigation = () => {
       </Tooltip>
 
       <Tooltip title="Experience" followCursor>
-        <Link to={"/contact"}>
+        <Link to={"/experience"}>
           <WorkOutlineOutlinedIcon />
         </Link>
       </Tooltip>
 
-      <Tooltip title="Tools" followCursor>
-        <Link to={"/contact"}>
+      <Tooltip title="Tech Stack" followCursor>
+        <Link to={"/tech-stack"}>
           <BuildOutlinedIcon />
         </Link>
       </Tooltip>

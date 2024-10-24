@@ -1,23 +1,24 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useFadeIntoView } from "../Hooks/useFadeIntoView";
 import { useState } from "react";
 import { Input } from "../Components/Input";
 import { Button } from "../Components/Button";
+import { Title } from "../Components/Title";
 
 interface FormInformation {
-  name: string | null;
-  email: string | null;
+  name: string;
+  email: string;
   budget: number;
-  message: string | null;
+  message: string;
 }
 
 export const LetsWorkTogetherSection = () => {
   const { isVisible, domRef } = useFadeIntoView();
   const [formState, setFormState] = useState<FormInformation>({
-    name: null,
-    email: null,
+    name: "",
+    email: "",
     budget: 0,
-    message: null,
+    message: "",
   });
 
   const handleNameChange = (event: any) => {
@@ -38,10 +39,10 @@ export const LetsWorkTogetherSection = () => {
   const handleSubmit = () => {
     if (!isSubmitDisabled) {
       setFormState({
-        name: null,
-        email: null,
+        name: "",
+        email: "",
         budget: 0,
-        message: null,
+        message: "",
       });
     }
   };
@@ -54,8 +55,8 @@ export const LetsWorkTogetherSection = () => {
 
   return (
     <StyledContainer ref={domRef} className={isVisible ? "is-visible" : ""}>
-      <StyledH1 $color="#fff">LET'S WORK</StyledH1>
-      <StyledH1 $color="#b6b4bd33">TOGETHER</StyledH1>
+      <Title text="LET'S WORK" textColor="#fff" allowSwitch />
+      <Title text="TOGETHER" textColor="#b6b4bd33" allowSwitch />
       <StyledContactInformation>
         <Input
           label="Name"
@@ -114,28 +115,6 @@ const StyledContainer = styled.div`
   // Phone
   @media only screen and (max-width: 600px) {
     padding: 0 2rem;
-  }
-`;
-
-const StyledH1 = styled.h1<{ $color: string }>`
-  ${({ $color }) => css`
-    margin: 0;
-    font-size: 6rem;
-    font-weight: 800;
-    line-height: 1.167;
-    color: ${$color};
-  `}
-
-  // Tablet
-  @media only screen and (max-width: 1062px) {
-    display: flex;
-    justify-content: center;
-  }
-
-  // Phone
-  @media only screen and (max-width: 600px) {
-    margin: 0;
-    font-size: 2rem;
   }
 `;
 

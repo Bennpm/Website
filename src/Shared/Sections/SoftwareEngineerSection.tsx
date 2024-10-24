@@ -1,28 +1,29 @@
 import styled, { css } from "styled-components";
 import { useFadeIntoView } from "../Hooks/useFadeIntoView";
+import { Title } from "../Components/Title";
 
 export const SoftwareEngineerSection = () => {
   const { isVisible, domRef } = useFadeIntoView();
 
   return (
     <StyledContainer ref={domRef} className={isVisible ? "is-visible" : ""}>
-      <StyledH1 $color="#fff">SOFTWARE</StyledH1>
-      <StyledH1 $color="#b6b4bd33">ENGINEER</StyledH1>
+      <Title text="SOFTWARE" textColor="#fff" allowSwitch />
+      <Title text="ENGINEER" textColor="#b6b4bd33" allowSwitch />
       <StyledLongParagraph $color="#998f8f">
         Passionate about creating intuitive and engaging user experiences.
         Specialize in transforming ideas into beautifully crafted products.
       </StyledLongParagraph>
       <StyledNumbers>
         <StyledStat>
-          <StyledH1 $color="#fff">+4</StyledH1>
+          <Title text="+4" textColor="#fff" />
           <StyledH6 $color="#998f8f">YEARS OF EXPERIENCE</StyledH6>
         </StyledStat>
         <StyledStat>
-          <StyledH1 $color="#fff">+10</StyledH1>
+          <Title text="+10" textColor="#fff" />
           <StyledH6 $color="#998f8f">PROJECTS COMPLETED</StyledH6>
         </StyledStat>
         <StyledStat>
-          <StyledH1 $color="#fff">+9</StyledH1>
+          <Title text="+9" textColor="#fff" />
           <StyledH6 $color="#998f8f">MASTERED TECHNOLOGIES</StyledH6>
         </StyledStat>
       </StyledNumbers>
@@ -41,28 +42,6 @@ const StyledContainer = styled.div`
     opacity: 1;
     transform: none;
     visibility: visible;
-  }
-`;
-
-const StyledH1 = styled.h1<{ $color: string }>`
-  ${({ $color }) => css`
-    margin: 0;
-    font-size: 6rem;
-    font-weight: 800;
-    line-height: 1.167;
-    color: ${$color};
-  `}
-
-  // Tablet
-  @media only screen and (max-width: 1062px) {
-    display: flex;
-    justify-content: center;
-  }
-
-  // Phone
-  @media only screen and (max-width: 600px) {
-    margin: 0;
-    font-size: 2rem;
   }
 `;
 
@@ -89,7 +68,7 @@ const StyledH6 = styled.h6<{ $color: string }>`
   }
 `;
 
-const StyledLongParagraph = styled.h6<{ $color: string }>`
+export const StyledLongParagraph = styled.h6<{ $color: string }>`
   ${({ $color }) => css`
     margin: 0 0 3rem;
     font-weight: 500;
